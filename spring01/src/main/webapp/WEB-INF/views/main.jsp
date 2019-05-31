@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="include/header.jsp" %>
+<link href="css/menu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<%@ include file="include/menu.jsp" %>
-	<hr>
 	<h2>${message }</h2>
 </body>
 </html>
