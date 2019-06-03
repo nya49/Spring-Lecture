@@ -106,7 +106,8 @@
 #cssmenu > ul > li > a:hover:after {
   background: #47c9af;
 }
-
+body { font-family: "나눔스퀘어라운드"}
+li > a { font-family: "나눔스퀘어라운드"}
 </style>
 
 
