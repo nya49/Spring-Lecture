@@ -36,7 +36,7 @@
 }
 #cssmenu {
   width: auto;
-  border-bottom: 3px solid #47c9af;
+  border-bottom: 3px solid #4374D9;
   font-family: Raleway, sans-serif;
   line-height: 1;
 }
@@ -104,7 +104,7 @@
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
-  background: #47c9af;
+  background: #4374D9;
 }
 body { font-family: "나눔스퀘어라운드"}
 li > a { font-family: "나눔스퀘어라운드"}

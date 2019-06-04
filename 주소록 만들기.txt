@@ -1,0 +1,24 @@
+sqlplus spring/1234
+
+-addmember 테이블 작성
+create table addmember(
+no number not null primary key, 
+name varchar2(50) not null,
+gender varchar2(50) not null,
+phone varchar2(50) not null,
+birthday varchar2(50) not null,
+address varchar2(100) not null
+);
+
+create sequence addmember_no_seq increment by 1 start with 1;
+alter sequence addmember_no_seq increment by -1 minvalue 0 ;
+alter sequence addmember_no_seq increment by 1 minvalue 0 ;
+
+-데이터 추가
+insert into addmember(no, name, gender, phone, birthday, address)
+values(addmember_no_seq.nextval, '김자바', '여', '010-1234-5678', '1992-06-04', '대전시 서구 월평동');
+
+- 시퀀스 삭제
+drop sequence addmember_no_seq;
+
+select last_number from user_sequences where sequence_name='addmember_no_seq';
