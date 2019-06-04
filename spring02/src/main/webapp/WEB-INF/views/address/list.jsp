@@ -21,9 +21,14 @@
 	a:hover { color:#FF007F; font-weight:bold;}
 	input[type='button']{
 		border : 2px solid #B2CCFF;
-		background-color:#ffffff;
+		background-color:#B2CCFF;
 		padding : 10px;
 		margin-top:20px;
+		cursor: pointer;
+		text-decoration: none;
+		border-radius:10px;
+		color:#ffffff;
+		font-size:15px;
 	}
 </style>
 </head>

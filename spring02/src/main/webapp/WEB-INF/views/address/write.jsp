@@ -18,17 +18,27 @@
 	a:hover { color:#FF007F; font-weight:bold;}
 	input[type='submit'], [type='reset']{
 		border : 2px solid #B2CCFF;
-		background-color:#ffffff;
+		background-color:#B2CCFF;
 		padding : 10px;
 		margin-top:20px;
+		cursor: pointer;
+		text-decoration: none;
+		border-radius:10px;
+		color:#ffffff;
+		font-size:15px;
 	}
 	input[type='text']{
 		align:left;
+		padding:5px;
+		border: 1px solid #B2CCFF;
+		width:95%;
+		height:20px;
+		border-radius:3px;
 	}
 </style>
 </head>
 <body>
-<div align="center">
+<div align="center" style="padding-top:20px;">
 	<h2>회원등록</h2>
 	<form name="form1" method="post" action="${path }/address/insert.do">
 		<table width="60%">

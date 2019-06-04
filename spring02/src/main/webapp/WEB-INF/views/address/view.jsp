@@ -12,17 +12,35 @@
 		text-align:left; 
 		height:40px; 
 		border-bottom:1px solid #B2CCFF;
+		padding-left:15px;
 	}
 	a { text-decoration:none; color : #000000; }
 	a:hover { color:#FF007F; font-weight:bold;}
 	input[type='button']{
 		border : 2px solid #B2CCFF;
-		background-color:#ffffff;
+		background-color:#B2CCFF;
 		padding : 10px;
 		margin-top:20px;
+		cursor: pointer;
+		text-decoration: none;
+		border-radius:10px;
+		color:#ffffff;
+		font-size:15px;
 	}
 	input[type='text']{
 		align:left;
+		padding:5px;
+		border: none;
+		width:95%;
+		height:20px;
+	}
+	input[type='text']:hover{
+		align:left;
+		padding:5px;
+		border: 1px solid #B2CCFF;
+		width:95%;
+		height:20px;
+		border-radius:3px;
 	}
 </style>
 <script>
@@ -43,32 +61,32 @@ $(function(){
 
 </head>
 <body>
-	<div align="center">
+	<div align="center" style="padding-top:20px;">
 	<h2>회원 정보</h2>
 	<form name="form1" method="post">
 		<table width="60%">
 			<tr>
 				<th>이름</th>
-				<td><input name="name" value="${dto.name }" readonly></td>
+				<td><input type="text" value=${dto.name } name="name" readonly></td>
 			</tr>
 			<tr>
 				<th>성별</th>
-				<td><input value="${dto.gender }" readonly></td>
-			</tr>
-			<tr>
-				<th>생년월일</th>
-				<td><input value=${dto.birthday } name="birthday"></td>
+				<td>${dto.gender }</td>
 			</tr>
 			<tr>
 				<th>전화번호</th>
-				<td><input value=${dto.phone } name="phone"></td>
+				<td><input type="text" value=${dto.phone } name="phone"></td>
+			</tr>
+			<tr>
+				<th>생년월일</th>
+				<td><input type="text" value=${dto.birthday } name="birthday"></td>
 			</tr>
 			<tr>
 				<th>주소</th>
-				<td><input value=${dto.address } name="address"></td>
+				<td><input type="text" value="${dto.address }" name="address" maxlength="100"></td>
 			</tr>
 		</table>
-		<input type="button" value="수정" id="btnUpdate">
+		<input type="button" value="수정" id="btnUpdate">&nbsp;&nbsp;
 		<input type="button" value="삭제" id="btnDelete">
 	</form>
 	</div>

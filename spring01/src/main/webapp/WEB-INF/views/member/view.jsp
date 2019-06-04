@@ -6,6 +6,45 @@
 <meta charset="UTF-8">
 <title>멤버리스트 화면</title>
 <%@ include file="../include/header.jsp" %>
+<style>
+	table { border-top:3px solid #B2CCFF; }
+	th { height:40px; border-bottom:1px solid #B2CCFF; width:150px;}
+	td { 
+		text-align:center; 
+		height:40px; 
+		border-bottom:1px solid #B2CCFF;
+		text-align:left;
+		padding-left:15px;
+	}
+	a { text-decoration:none; color : #000000; }
+	a:hover { color:#FF007F; font-weight:bold;}
+	input[type='button']{
+		border : 2px solid #B2CCFF;
+		background-color:#B2CCFF;
+		padding : 10px;
+		margin-top:20px;
+		cursor: pointer;
+		text-decoration: none;
+		border-radius:10px;
+		color:#ffffff;
+		font-size:15px;
+	}
+	input[type='text']{
+		align:left;
+		padding:5px;
+		border: none;
+		width:95%;
+		height:20px;
+	}
+	input[type='text']:hover{
+		align:left;
+		padding:5px;
+		border: 1px solid #B2CCFF;
+		width:95%;
+		height:20px;
+		border-radius:3px;
+	}
+</style>
 <script>
 	$(function(){
 		$("#btnUpdate").click(function(){
@@ -24,37 +63,35 @@
 </head>
 <body>
 	<%@ include file="../include/menu.jsp" %>
+	<div align="center">
 	<h2>회원 정보</h2>
 	<form name="form1" method="post" >
-		<table border="1" width="400px">
+		<table width="80%">
 			<tr>
-				<td>아이디</td>
-				<td><input name="userid" value="${dto.userid }" readonly></td>
+				<th>아이디</th>
+				<td><input type="text" name="userid" value="${dto.userid }" readonly></td>
 			</tr>
 			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" name="passwd" ></td>
+				<th>비밀번호</th>
+				<td><input type="text" type="password" name="passwd" ></td>
 			</tr>
 			<tr>
-				<td>이름</td>
-				<td><input name="name" value="${dto.name }"></td>
+				<th>이름</th>
+				<td><input type="text" name="name" value="${dto.name }"></td>
 			</tr>
 			<tr>
-				<td>이메일</td>
-				<td><input name="email" value="${dto.email }" ></td>
+				<th>이메일</th>
+				<td><input type="text" name="email" value="${dto.email }" ></td>
 			</tr>
 			<tr>
-				<td>회원 가입 일자</td>
+				<th>회원 가입 일자</th>
 				<td><fmt:formatDate value="${dto.join_date }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="button" value="수정" id="btnUpdate">
-					<input type="button" value="삭제" id="btnDelete">
-					<div style="color:red;">${message }</div>
-				</td>
-			</tr>
 		</table>
+		<input type="button" value="수정" id="btnUpdate">
+					<input type="button" value="삭제" id="btnDelete">&nbsp;&nbsp;
+					<div style="color:red;">${message }</div>
 	</form>
+</div>
 </body>
 </html>
