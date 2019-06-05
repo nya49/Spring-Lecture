@@ -1,0 +1,52 @@
+상품 관리 프로젝트 진행
+
+일반적인 방식
+비동기적인 방식(ajax)
+
+-------------------------------------------------------------------------------------------------------
+
+상품 테이블 작성
+
+1. 계정접속 : sqlplus spring/1234
+
+2. 테이블 작성
+create table product(
+product_id number,
+product_name varchar2(50),
+price number default 0,
+description clob,
+picture_url varchar2(500),
+primary key(product_id)
+);
+
+clod : 최대 4G까지 입력 가능 / 하나의 테이블에서 여러 컬럼에 사용 가능 / 검색 가능
+long : 최대 2G까지 입력 가능 / 하나의 테이블에서 한개 컬럼만 사용 가능 / 검색 불가능
+
+
+3. 데이터 입력
+insert into product values (1, '레몬', 1500, '레몬에 포함된 구연산은 피로회복에 좋습니다. 비타민C도 풍부합니다.', 'lemon.jpg');
+insert into product values (2, '오렌지', 2000, '비타민C가 풍부합니다. 생과일 주스로 마시면 좋습니다.', 'orange.jpg');
+insert into product values (3, '키위', 3000, '비타민C가 매우 풍부합니다. 다이어트나 미용에 좋습니다.', 'kiwi.jpg');
+insert into product values (4, '포도', 5000, '폴리페놀을 다량 함유하고 있어 항산화 작용을 합니다.', 'grape.jpg');
+insert into product values (5, '딸기', 8000, '비타민C나 플라보노이드를 다량 함유하고 있습니다.', 'strawberry.jpg');
+insert into product values (6, '귤', 7000, '시네피린을 함유하고 있어 감기예방에 좋습니다.', 'tangerine.jpg');
+
+
+4. 상품 코드를 위한 시퀀스 생성
+create sequence seq_product start with 10 increment by 1;
+
+insert into product values (seq_product.nextval, '사과', 1500, '맛있는 사과입니다.', 'apple.jpg');
+
+5. 이미지 주소 : http://mannaedu.com/bbs/board.php?bo_table=pds&wr_id=37&page=3
+
+-------------------------------------------------------------------------------------------------------
+
+6. 파일업로드 라이브러리 : commons-fileupload 파일 검색해서 pom.xml에 추가
+7. imgscalr : 이미지 썸네일을 만들어 주는 라이브러리 추가 (pom.xml)
+
+상품관리 실습 예제
+일반 사용자 : 상품 목록 보기, 장바구니 담기, 장바구니 보기
+관리자 : 상품등록, 상품수정/삭제
+
+
+

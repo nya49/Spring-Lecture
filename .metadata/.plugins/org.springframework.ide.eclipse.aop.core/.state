@@ -2,4 +2,5 @@
 <aop-reference-model>
 <aop-project name="sample"/>
 <aop-project name="spring01"/>
+<aop-project name="spring02"/>
 </aop-reference-model>
